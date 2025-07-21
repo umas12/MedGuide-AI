@@ -1,0 +1,15 @@
+langchain
+langchain-community
+transformers
+sentence-transformers
+faiss-cpu
+streamlit
+fastapi
+uvicorn
+pandas
+unstructured
+unstructured[pdf]
+PyPDF2
+scikit-learn
+pandas
+numpy
