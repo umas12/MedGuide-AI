@@ -33,7 +33,7 @@ def load_documents():
     
     pdf_docs = []
     paths = glob.glob("data/cms_pdfs/*.pdf")
-    print(f"🔍 Found {len(paths)} PDF files.")
+    print(f"Found {len(paths)} PDF files.")
     for path in paths:
             loader = PyPDFLoader(path)#, mode="elements", strategy="fast")
             loaded = loader.load()
@@ -66,12 +66,12 @@ def chunk_documents(docs):
 
 def get_or_build_index(chunks, model, index_path="index/faiss_index.bin", emb_path="index/embeddings.npy"):
     if os.path.exists(index_path) and os.path.exists(emb_path):
-        print("📂 Loading existing index and embeddings from disk...")
+        print("Loading existing index and embeddings from disk...")
         index = faiss.read_index(index_path)
         embs = np.load(emb_path)
         return index, embs
 
-    print("📦 Building new index...")
+    print("Building new index...")
     texts = [c.page_content for c in chunks]
     embs = model.encode(texts, show_progress_bar=True)
     index = faiss.IndexFlatL2(embs.shape[1])
@@ -138,4 +138,5 @@ def rag_qa_guarded(question, k=5, thresh=0.2):
         "answer": result["answer"],
         "score": result["score"],
         "sources": [d.metadata.get("source", "unknown") for d in docs]
+
     }
