@@ -10,11 +10,9 @@ MedGuide-AI is an intelligent web-based assistant that answers medical questions
 
 ## 2. What are we trying to achieve?
 
-I aim to:
 - Provide accurate medical information using a hybrid NLP pipeline
 - Make healthcare information accessible, conversational, and safe
 - Explore the boundaries between **extractive QA** and **generative QA**, with future support for GPT-style completions
-
 - **Accuracy & Explainability**: Answers are extracted directly from trusted source documents (MedQuAD Q&A, CMS policy PDFs) and each response lists its sources.  
 - **Safety & Compliance**: High-risk requests (diagnosis, treatment, dosing) trigger a professional-referral disclaimer; low-confidence answers fall back to a “not certain” message.  
 - **Zero-Cost & Open Source**: Uses only open-source components and free-tier hosting (Streamlit Community Cloud, Replit, Google Colab).  
@@ -78,3 +76,4 @@ I aim to:
 - **Logging & Monitoring**: Integrate Google Sheets or Firebase, set up Sentry, build usage dashboard.  
 - **Testing & Feedback**: Automated pytest suite, user feedback widget, iterative prompt refinement.  
 - **Maintenance & Scale-Up**: Scheduled data refresh, model/index upgrades, personalization, compliance logging.
+
